@@ -30,5 +30,6 @@ RUN pip3 install wheel colorlog termcolor pycrypto argcomplete pyinstaller passl
 RUN activate-global-python-argcomplete
 # Change to /root et clone odat project
 WORKDIR /root
-RUN git clone https://github.com/quentinhardy/odat.git
+RUN git clone https://github.com/feng-zhe/odat.git
 WORKDIR odat
+RUN ln -s /usr/bin/python3 /usr/bin/python
