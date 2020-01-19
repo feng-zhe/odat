@@ -28,8 +28,9 @@ RUN bash -cl 'pip3 install cx_Oracle -i https://pypi.python.org/simple/'
 RUN pip3 install --upgrade pip
 RUN pip3 install wheel colorlog termcolor pycrypto argcomplete pyinstaller passlib -i https://pypi.python.org/simple/
 RUN activate-global-python-argcomplete
+# Replace python with python3
+RUN ln -s /usr/bin/python3 /usr/bin/python
 # Change to /root et clone odat project
 WORKDIR /root
 RUN git clone https://github.com/feng-zhe/odat.git
 WORKDIR odat
-RUN ln -s /usr/bin/python3 /usr/bin/python
